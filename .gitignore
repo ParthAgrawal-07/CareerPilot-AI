@@ -1,0 +1,24 @@
+# Streamlit secrets
+.streamlit/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Virtual environments
+venv/
+.env/
+
+# SQLite temp files
+*.db-journal
+
+# Editor files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
