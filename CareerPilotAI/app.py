@@ -17,12 +17,8 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-# !!! PASTE YOUR GOOGLE API KEY HERE !!!
-API_KEY = "AIzaSyBL72PzT92ecmcGkoJgf5KWiLe7S1Wq3EE" 
-
-# Configure AI Chatbot
 try:
-    genai.configure(api_key=API_KEY)
+   genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
     chat_model = genai.GenerativeModel('gemini-1.5-flash')
     chat_available = True
 except:
@@ -315,3 +311,4 @@ with tab2:
                         st.session_state.messages.append({"role": "model", "parts": [response.text]})
                     except Exception as e:
                         st.error("AI Error.")
+
