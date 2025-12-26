@@ -19,10 +19,10 @@ st.set_page_config(
 
 try:
    genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
-    chat_model = genai.GenerativeModel('gemini-1.5-flash')
-    chat_available = True
+   chat_model = genai.GenerativeModel('gemini-1.5-flash')
+   chat_available = True
 except:
-    chat_available = False
+   chat_available = False
 
 # ==========================================
 # 1. CUSTOM CSS (THE UI MAGIC)
@@ -311,4 +311,5 @@ with tab2:
                         st.session_state.messages.append({"role": "model", "parts": [response.text]})
                     except Exception as e:
                         st.error("AI Error.")
+
 
